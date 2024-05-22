@@ -1,0 +1,59 @@
+﻿@model List<EmployeeModel>
+<div class="d-flex flex-row justify-content-end">
+    <a asp-controller="employee" asp-action="Create" class="btn btn-info">Add New </a>
+</div>
+<div>
+    <h2>
+       @ViewBag.Message
+    </h2>
+</div>
+
+<div class="text-center">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            @*   @{ int index = 1; }*@
+            @foreach (var lists in Model)
+            {
+                <tr>
+                    <th scope="row">@lists.id</th>
+                    <td>@lists.Name</td>
+                    <td>@lists.Address</td>
+                    <td>@lists.Age</td>
+                    <td><a class="nav link "></a></td>
+                    @*/ControllerName/ActionName/2*@
+
+                    @*Tag helper:
+                server side functionality, that are used to provide some experience  to work with html.
+                -integrate server side code into html with the help of tag helper
+                -to achive server side functionality
+
+                *@
+
+
+
+
+                    <td>
+
+                        <a asp-controller="Employee" asp-action="edit" asp-route-id="@lists.id" class="btn btn-info">Edit</a>
+                        <a asp-controller="Employee" asp-action="Delete" asp-route-id="@lists.id" class="btn btn-danger">Delete</a>
+                    </td>
+
+            
+                </tr>
+
+                //index++;
+            }
+
+
+        </tbody>
+    </table>
+
+</div>

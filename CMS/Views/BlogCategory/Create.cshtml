@@ -1,0 +1,19 @@
+﻿@model BlogCategoryModel
+
+@{
+    ViewData["Title"] = "Create";
+    //Layout = "";
+}
+
+<form method="post" asp-controller="BlogCategory" asp-action="create">
+    <div class="form-group" id="categoryName">
+        <label asp-for="Name">Category Name</label>
+        <input type="text" class="form-control" asp-for="Name" value="@Model.Name">
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
